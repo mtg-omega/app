@@ -5,7 +5,7 @@ import Login from './login';
 import Nav from './navigator';
 
 function App(props) {
-  if (props.isLoggedIn) {
+  if (!props.isLoggedIn) {
     return <Login />;
   }
 

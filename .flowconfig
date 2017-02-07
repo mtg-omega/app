@@ -2,12 +2,6 @@
 ; We fork some components by platform
 .*/*[.]android.js
 
-; Ignore templates for 'react-native init'
-.*/local-cli/templates/.*
-
-; Ignore the website subdir
-<PROJECT_ROOT>/website/.*
-
 ; Ignore "BUCK" generated dirs
 <PROJECT_ROOT>/\.buckd/
 
@@ -28,8 +22,6 @@ node_modules/react-native/flow
 flow/
 
 [options]
-emoji=true
-
 module.system=haste
 
 experimental.strict_type_args=true

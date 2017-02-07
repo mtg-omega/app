@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { StyleSheet, Image, TouchableHighlight, View, Text } from 'react-native';
+import { StyleSheet, TouchableHighlight, Text } from 'react-native';
 import { connect } from 'react-redux';
 
 import { skipLogin } from '../actions';

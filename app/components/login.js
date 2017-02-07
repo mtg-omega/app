@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
 });
 
 class Login extends React.Component {
+  static propTypes = {
+    dispatch: React.PropTypes.func.isRequired,
+  };
+
   constructor(props) {
     super(props);
 
@@ -31,10 +35,6 @@ class Login extends React.Component {
     );
   }
 }
-
-Login.propTypes = {
-  dispatch: React.PropTypes.func.isRequired,
-};
 
 function initialize(/* store */) {
   return {};

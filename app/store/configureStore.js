@@ -14,11 +14,10 @@ const logger = createLogger({
 export default function configureStore(onComplete) {
   const store = createStore(
     combineReducers(reducers),
-    // compose(
-    //   applyMiddleware(thunk, logger),
-    //   autoRehydrate,
-    // ),
-    applyMiddleware(thunk, logger),
+    compose(
+      applyMiddleware(thunk, logger),
+      autoRehydrate(),
+    ),
   );
 
   persistStore(store, { storage: AsyncStorage }, onComplete);

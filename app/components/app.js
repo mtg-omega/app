@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import Login from './login';
 import Nav from './navigator';
 
-function App() {
-  if (this.props.isLoggedIn) {
+function App(props) {
+  if (props.isLoggedIn) {
     return <Login />;
   }
 
@@ -13,6 +13,10 @@ function App() {
     <Nav />
   );
 }
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
 
 function initialize(store) {
   return {

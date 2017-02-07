@@ -19,6 +19,8 @@ export default function setup() {
     }
 
     render() {
+      console.log(this.state);
+
       if (this.state.isLoading) {
         return null;
       }

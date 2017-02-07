@@ -4,6 +4,9 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"eslint": "eslint .",
+		"flow": "flow",
+		"check": "npm run eslint && npm run flow",
 		"test": "jest"
 	},
 	"dependencies": {
@@ -11,6 +14,8 @@
 		"react-native": "0.41.1",
 		"react-redux": "^5.0.2",
 		"redux": "^3.6.0",
+		"redux-logger": "^2.8.1",
+		"redux-persist": "^4.2.0",
 		"redux-thunk": "^2.2.0"
 	},
 	"devDependencies": {
@@ -21,6 +26,7 @@
 		"eslint-plugin-import": "^2.2.0",
 		"eslint-plugin-jsx-a11y": "^3.0.2",
 		"eslint-plugin-react": "^6.9.0",
+		"flow-bin": "^0.38.0",
 		"jest": "18.1.0",
 		"react-test-renderer": "~15.4.0-rc.4",
 		"redux-devtools": "^3.3.2"

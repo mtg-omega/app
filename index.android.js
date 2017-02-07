@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
 
-import Root from './app/setup';
+import setup from './app/setup';
 
-AppRegistry.registerComponent('MtgOmega', () => Root);
+AppRegistry.registerComponent('MtgOmega', setup);

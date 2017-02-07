@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import Login from './login';
@@ -15,7 +15,7 @@ function App(props) {
 }
 
 App.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: React.PropTypes.bool.isRequired,
 };
 
 function initialize(store) {

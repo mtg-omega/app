@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableHighlight, Text } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -34,7 +34,7 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  dispatch: React.PropTypes.func.isRequired,
 };
 
 function initialize(/* store */) {

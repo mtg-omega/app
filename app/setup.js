@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from './components/app';
 import configureStore from './store/configureStore';
 
-export default function setup() {
+export default function setup(): React.ReactClass<{}> {
   // init relay (?)
   // init facebook sdk (?)
 

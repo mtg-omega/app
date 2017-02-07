@@ -1,13 +1,14 @@
-export const SKIP_LOGIN = 'SKIP_LOGIN';
-export const LOGGED_OUT = 'LOGGED_OUT';
+import { SKIP_LOGIN, LOGGED_OUT } from './types';
 
-export function skipLogin() {
+import type { Action } from './types';
+
+export function skipLogin(): Action {
   return {
     type: SKIP_LOGIN,
   };
 }
 
-export function logout() {
+export function logout(): Action {
   return {
     type: LOGGED_OUT,
   };

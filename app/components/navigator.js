@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, Navigator } from 'react-native';
 
 import Home from './home';
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 });
 
 
-export default class Nav extends Component {
+export default class Nav extends React.Component {
   static renderScene(route, navigator) {
     return <Home navigator={navigator} />;
   }

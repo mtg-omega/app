@@ -1,4 +1,5 @@
 import { AsyncStorage } from 'react-native';
+import devTools from 'remote-redux-devtools';
 import { applyMiddleware, createStore, compose, combineReducers, Store } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
@@ -16,7 +17,11 @@ export default function configureStore(onComplete: ?() => void): Store {
     combineReducers(reducers),
     compose(
       applyMiddleware(thunk, logger),
-      autoRehydrate(),
+      // devTools({
+      //   name: 'mtg-omega',
+      //   realtime: true,
+      // }),
+      // autoRehydrate(),
     ),
   );
 

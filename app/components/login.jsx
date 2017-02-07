@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { StyleSheet, Image, TouchableHighlight, View, Text } from 'react-native';
 import { connect } from 'react-redux';
+
+import { skipLogin } from '../actions';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,24 +11,34 @@ const styles = StyleSheet.create({
   },
 });
 
-class Home extends React.Component {
-  _onPressButton() {
-    this.props.navigator.push({ id: 'home' });
+class Login extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleSkipLogin = this.handleSkipLogin.bind(this);
+  }
+
+  handleSkipLogin() {
+    this.props.dispatch(skipLogin());
   }
 
   render() {
     return (
-      <TouchableHighlight onPress={this._onPressButton} style={{ flex: 1 }}>
-        <Image source={this.props.frame} style={styles.container} />
+      <TouchableHighlight onPress={this.handleSkipLogin} style={{ flex: 1 }}>
+        <Text style={styles.container}>
+          Skip Login
+        </Text>
       </TouchableHighlight>
     );
   }
 }
 
-function initialize(store) {
-  return {
-    frame: store.initialize.frame,
-  };
+Login.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+function initialize(/* store */) {
+  return {};
 }
 
-export default connect(initialize)(Home);
+export default connect(initialize)(Login);

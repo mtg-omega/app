@@ -1,8 +1,12 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import { connect, Provider } from 'react-redux';
+import { Router } from 'react-native-router-flux';
 
-import App from './components/app';
 import configureStore from './store/configureStore';
+import AppRoutes from './navigation';
+import theme from './theme';
+
+const RouterWithRedux = connect()(Router);
 
 export default function setup(): React.ReactClass<{}> {
   // init relay (?)
@@ -25,7 +29,7 @@ export default function setup(): React.ReactClass<{}> {
 
       return (
         <Provider store={this.state.store}>
-          <App />
+          <RouterWithRedux scenes={AppRoutes} style={theme.styles.appContainer} />
         </Provider>
       );
     }

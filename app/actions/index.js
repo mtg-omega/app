@@ -1,6 +1,7 @@
-import { skipLogin, logout } from './login';
+import { autoLogin, skipLogin, logout } from './login';
 
 export {
+  autoLogin,
   skipLogin,
   logout,
 };

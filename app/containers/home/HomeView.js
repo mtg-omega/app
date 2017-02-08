@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { connect } from 'react-redux';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +7,9 @@ const styles = StyleSheet.create({
   },
 });
 
-function Home() {
+export default function Home() {
+  console.log('Home');
+
   return (
     <View style={{ flex: 1 }}>
       <Text style={styles.container}>
@@ -17,11 +18,3 @@ function Home() {
     </View>
   );
 }
-
-Home.propTypes = {
-  dispatch: React.PropTypes.func.isRequired,
-};
-
-const mapStateToProps = () => {};
-
-export default connect(mapStateToProps)(Home);

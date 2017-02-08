@@ -18,10 +18,8 @@ App.propTypes = {
   isLoggedIn: React.PropTypes.bool.isRequired,
 };
 
-function initialize(store) {
-  return {
-    isLoggedIn: store.user.isLoggedIn || store.user.hasSkippedLogin,
-  };
-}
+const mapStateToProps = state => ({
+  isLoggedIn: state.user.isLoggedIn || state.user.hasSkippedLogin,
+});
 
-export default connect(initialize)(App);
+export default connect(mapStateToProps)(App);

@@ -22,8 +22,6 @@ Home.propTypes = {
   dispatch: React.PropTypes.func.isRequired,
 };
 
-function initialize(/* store */) {
-  return {};
-}
+const mapStateToProps = () => {};
 
-export default connect(initialize)(Home);
+export default connect(mapStateToProps)(Home);

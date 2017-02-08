@@ -36,8 +36,6 @@ class Login extends React.Component {
   }
 }
 
-function initialize(/* store */) {
-  return {};
-}
+const mapStateToProps = () => {};
 
-export default connect(initialize)(Login);
+export default connect(mapStateToProps)(Login);

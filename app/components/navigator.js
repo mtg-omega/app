@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 });
 
 
-export default class Nav extends React.Component {
+export default class AppNavigator extends React.Component {
   static renderScene(route, navigator) {
     return <Home navigator={navigator} />;
   }
@@ -20,7 +20,7 @@ export default class Nav extends React.Component {
       <Navigator
         style={styles.container}
         initialRoute={{}}
-        renderScene={Nav.renderScene}
+        renderScene={AppNavigator.renderScene}
       />
     );
   }

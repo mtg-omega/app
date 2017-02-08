@@ -1,7 +1,11 @@
-import { autoLogin, skipLogin, logout } from './login';
+import { closeDrawer, openDrawer } from './drawer';
+import { autoLogin, logout, skipLogin } from './login';
 
 export {
+  closeDrawer,
+  openDrawer,
+
   autoLogin,
-  skipLogin,
   logout,
+  skipLogin,
 };

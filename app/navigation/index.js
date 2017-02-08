@@ -5,6 +5,7 @@ import config from '../config';
 
 import Launch from '../containers/launch/LaunchContainer';
 import Authenticate from '../containers/auth/AuthenticateView';
+import Drawer from '../containers/drawer/DrawerContainer';
 import Home from '../containers/home/HomeView';
 
 export default Actions.create(
@@ -17,9 +18,8 @@ export default Actions.create(
     />
 
     {/* Auth */}
-    <Scene key={'authenticate'}>
+    <Scene key={'authenticate'} hideNavBar>
       <Scene
-        hideNavBar
         key={'authLanding'}
         component={Authenticate}
         type={ActionConst.RESET}
@@ -28,13 +28,15 @@ export default Actions.create(
     </Scene>
 
     {/* Main App */}
-    <Scene key={'app'} title={config.app.name} hideNavBar={false} type={ActionConst.RESET}>
-      <Scene
-        key={'home'}
-        initial
-        component={Home}
-        analyticsDesc={'Homepage'}
-      />
+    <Scene key={'app'} type={ActionConst.RESET}>
+      <Scene key={'home'} component={Drawer}>
+        <Scene
+          key={'homepage'}
+          component={Home}
+          title={config.app.name}
+          analyticsDesc={'Homepage'}
+        />
+      </Scene>
     </Scene>
   </Scene>,
 );

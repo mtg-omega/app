@@ -28,14 +28,11 @@ export default Actions.create(
     </Scene>
 
     {/* Main App */}
-    <Scene key={'app'} type={ActionConst.RESET}>
-      <Scene key={'home'} component={Drawer}>
-        <Scene
-          key={'homepage'}
-          component={Home}
-          title={config.app.name}
-          analyticsDesc={'Homepage'}
-        />
+    <Scene key={'app'} title={config.app.name} type={ActionConst.RESET}>
+      <Scene key={'drawer'} component={Drawer}>
+        <Scene key={'dummy'}>
+          <Scene key={'home'} component={Home} title={'Home'} analyticsDesc={'Homepage'} initial />
+        </Scene>
       </Scene>
     </Scene>
   </Scene>,

@@ -8,8 +8,6 @@ export default class LaunchView extends React.Component {
   };
 
   componentDidMount() {
-    console.log('Launch');
-
     this.props.autoLogin()
       .then(() => Actions.app({ type: 'reset' }))
       .catch(() => Actions.authenticate({ type: 'reset' }));

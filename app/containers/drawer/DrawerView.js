@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Drawer } from 'native-base';
 import { DefaultRenderer } from 'react-native-router-flux';
 
@@ -15,12 +14,12 @@ export default class DrawerView extends React.Component {
   };
 
   componentDidUpdate() {
-    console.log(this.props);
+    console.log('componentDidUpdate');
 
     if (this.props.isDrawerOpen) {
-      this.drawer.open();
+      this.drawer._root.open(); // eslint-disable-line no-underscore-dangle
     } else {
-      this.drawer.close();
+      this.drawer._root.close(); // eslint-disable-line no-underscore-dangle
     }
   }
 
@@ -37,7 +36,8 @@ export default class DrawerView extends React.Component {
     return (
       <Drawer
         ref={(ref) => { this.drawer = ref; }}
-        type={'overlay'}
+        open={state.open}
+        type={'displace'}
         tweenDuration={150}
         content={<SideBar />}
         tapToClose
@@ -60,9 +60,7 @@ export default class DrawerView extends React.Component {
         })}
         negotiatePan
       >
-        <View style={{ backgroundColor: '#000', flex: 1 }}>
-          <DefaultRenderer navigationState={children[0]} onNavigate={this.props.onNavigate} />
-        </View>
+        <DefaultRenderer navigationState={children[0]} onNavigate={this.props.onNavigate} />
       </Drawer>
     );
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Actions, Scene, ActionConst } from 'react-native-router-flux';
 
 import config from '../config';
+import theme from '../theme';
 
 import Launch from '../containers/launch/LaunchContainer';
 import Authenticate from '../containers/auth/AuthenticateView';
@@ -31,7 +32,7 @@ export default Actions.create(
     <Scene key={'app'} title={config.app.name} type={ActionConst.RESET}>
       <Scene key={'drawer'} component={Drawer}>
         <Scene key={'dummy'}>
-          <Scene key={'home'} component={Home} title={'Home'} analyticsDesc={'Homepage'} initial />
+          <Scene key={'home'} component={Home} title={'Home'} analyticsDesc={'Homepage'} initial sceneStyle={{ paddingTop: theme.sizes.navbarHeight }}/>
         </Scene>
       </Scene>
     </Scene>
